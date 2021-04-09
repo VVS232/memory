@@ -6,10 +6,11 @@ type props = {
   id: number;
   imgSrc: string;
   children?: ReactNode;
+  clickHandler: () => void;
 };
 function Card(props: props) {
   return (
-    <div className={style.pokeCard}>
+    <div className={style.pokeCard} onClick={props.clickHandler}>
       <img className={style.pokeImg} src={props.imgSrc} alt="" />
       <p className={style.pokeName}>
         #{props.id} {props.name}

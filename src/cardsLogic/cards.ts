@@ -8,7 +8,7 @@ function getRandomNumbers(range: number): number[] {
   let randomNumber: number;
   for (let i = 0; i < range; i++) {
     do {
-      randomNumber = Math.floor(Math.random() * 620);
+      randomNumber = Math.floor(Math.random() * 898);
     } while (newArr.includes(randomNumber));
     newArr.push(randomNumber);
   }
