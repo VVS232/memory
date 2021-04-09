@@ -1,0 +1,27 @@
+#loading{
+    display: flex;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+#loadingImg{
+    width:70px;
+    height: 70px;
+    animation: rotation 2s infinite linear;
+}
+#loading p{
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }

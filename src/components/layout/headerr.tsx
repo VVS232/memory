@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import style from './headerr.module.css';
+import LevelContext from '../../context/levelContext';
 
 const Headerr: React.FC = () => {
+  const level = useContext(LevelContext);
   return (
     <header className={style.header}>
       <img
@@ -9,6 +11,7 @@ const Headerr: React.FC = () => {
         alt=""
         id={style.logo}
       />
+      <p className={style.headerText}>Level {level}</p>;
       <p className={style.headerText}>Remember them all</p>
     </header>
   );

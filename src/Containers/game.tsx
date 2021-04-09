@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Card from '../components/card';
 import style from './game.module.css';
 import getPokemonsByIds from '../cardsLogic/cards';
+import Loading from '../components/layout/loading';
 
 type card = {
   imgLink: string;
@@ -10,12 +11,17 @@ type card = {
   name: string;
   isClicked: boolean;
 };
-function Game() {
+type props = {
+  children?: React.ReactNode;
+  IncreaseLevel: Function;
+};
+function Game(props: props) {
   const [cards, setCards] = useState<card[] | null>(null);
   const [isLoading, setLoading] = useState(false);
   const [cardNumber, setCardNumber] = useState(2);
 
   useEffect(() => {
+    //fetching pokemons info and making cards when number of cards updates
     setLoading(true);
     const populateCards = async () => {
       let pokemons = await Promise.all(getPokemonsByIds(cardNumber));
@@ -53,13 +59,14 @@ function Game() {
     if (notClickedCards.length > 0) {
       return;
     } else {
-      setCardNumber(cardNumber + 5);
+      props.IncreaseLevel();
+      setCardNumber(cardNumber + 1);
     }
   }
   return (
     <div className={style.gameBoard}>
       {isLoading ? (
-        <p>Loading...</p>
+        <Loading />
       ) : cards ? (
         cards.map((card, index) => {
           return (
@@ -81,7 +88,7 @@ export default Game;
 
 function shuffle(array: any[]) {
   let newArray = [...array];
-  for (let i = 0; i < newArray.length; i++) {
+  for (let i = newArray.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1)); // случайный индекс от 0 до i
     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
   }
