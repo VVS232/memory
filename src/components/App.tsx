@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Headerr from './layout/headerr';
 import Game from '../Containers/game';
 import LevelContext from '../context/levelContext';
+import ErrorBoundary from '../ErrorBoundaries/ErrorBoundary';
 
 function App() {
   const [level, setSevel] = useState(1);
@@ -10,11 +11,13 @@ function App() {
     <LevelContext.Provider value={level}>
       <div className="App">
         <Headerr />
-        <Game
-          IncreaseLevel={() => {
-            setSevel(level + 1);
-          }}
-        ></Game>
+        <ErrorBoundary>
+          <Game
+            IncreaseLevel={() => {
+              setSevel(level + 1);
+            }}
+          ></Game>
+        </ErrorBoundary>
       </div>
     </LevelContext.Provider>
   );

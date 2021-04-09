@@ -7,7 +7,7 @@ const Headerr: React.FC = () => {
   return (
     <header className={style.header}>
       <img
-        src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c325.png"
+        src="https://i.pinimg.com/originals/76/47/9d/76479dd91dc55c2768ddccfc30a4fbf5.png"
         alt=""
         id={style.logo}
       />

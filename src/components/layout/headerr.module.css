@@ -6,8 +6,8 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
-    background-color: rgb(85, 0, 71);
-    padding-left: 10%;
+    background-color: darkcyan;
+        padding-left: 10%;
     padding-right: 10%;
     margin-bottom: 20px;
 }

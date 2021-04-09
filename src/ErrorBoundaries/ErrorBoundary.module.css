@@ -1,0 +1,10 @@
+.text{
+    font-size: 30px;
+}
+.img{
+    width:400px
+}
+#error{
+    width:50%;
+    margin: auto;
+}

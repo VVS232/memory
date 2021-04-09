@@ -1,0 +1,21 @@
+#lost{
+    width:60%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#lost img{
+    width:300px
+}
+#lost p{
+    font-size: 40px;
+}
+#lost button{
+    margin-top: 40px;
+    width:200px;
+    height: 50px;
+    background-color: honeydew;
+    font-size: 20px;
+color: #000;}
