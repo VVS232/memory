@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import style from './card.module.css';
 
-type props = {};
-const Card: React.FunctionComponent<props> = function (props: props) {
+type props = {
+  name: string;
+  id: number;
+  imgSrc: string;
+  children?: ReactNode;
+};
+function Card(props: props) {
   return (
     <div className={style.pokeCard}>
-      <img
-        className={style.pokeImg}
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/202.png"
-        alt=""
-      />
-      <p className={style.pokeName}>Pokemon Name</p>
+      <img className={style.pokeImg} src={props.imgSrc} alt="" />
+      <p className={style.pokeName}>
+        #{props.id} {props.name}
+      </p>
     </div>
   );
-};
+}
 
 export default Card;
